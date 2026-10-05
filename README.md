@@ -101,7 +101,7 @@ sequenceDiagram
 
 ### 2. Cliente y servidor
 
-El **cliente** es el navegador con la página (`frontend/`). El **servidor** es la API de FastAPI (`backend/`), que es la única que toca la base de datos. En una app de escritorio todo corre junto en la misma compu. Acá están separados y se hablan por HTTP, así que el mismo servidor puede atender a muchos clientes.
+El **cliente** es el navegador con la página (`frontend/`). El **servidor** es la API de FastAPI (`backend/`), que es la única que toca la base de datos. En una app de escritorio todo corre junto en la misma computadora. Acá están separados y se hablan por HTTP, así que el mismo servidor puede atender a muchos clientes.
 
 ```mermaid
 flowchart LR
@@ -161,4 +161,4 @@ POST /libros
 
 ### 7. Stateless
 
-Que HTTP sea **stateless** significa que el servidor no se acuerda de los pedidos anteriores: cada pedido trae todo lo que necesita. Los datos quedan guardados en `biblioteca.db` y no en la memoria de la API. Por eso podría tener 3 servidores iguales y cualquiera podría atender cualquier pedido. Para eso habría que pasar a una base compartida, porque SQLite es un archivo local.
+Que HTTP sea **stateless** significa que el servidor no se acuerda de los pedidos anteriores: cada pedido trae todo lo que necesita. Los datos quedan guardados en `biblioteca.db` y no en la memoria de la API. Por eso podría tener 3 servidores iguales y cualquiera podría atender cualquier pedido. Eso sí, para hacerlo habría que pasar a una base de datos compartida, porque SQLite es un archivo local.
