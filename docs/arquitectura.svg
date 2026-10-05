@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1340" height="680" viewBox="0 0 1340 680" font-family="Arial, Helvetica, sans-serif">
+  <title>Arquitectura de la aplicación Biblioteca</title>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+    <marker id="flechaAzul" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1f5fa8"/>
+    </marker>
+    <marker id="flechaVerde" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2e7d32"/>
+    </marker>
+  </defs>
+  <style>
+    .titulo { font-size: 22px; font-weight: bold; fill: #1a1a1a; }
+    .zona { font-size: 16px; font-weight: bold; fill: #1a1a1a; }
+    .puerto { font-size: 14px; fill: #b3261e; font-weight: bold; }
+    .caja-t { font-size: 14px; font-weight: bold; fill: #1a1a1a; }
+    .caja-s { font-size: 12px; fill: #333333; }
+    .nota { font-size: 12px; fill: #333333; }
+    .etq { font-size: 12px; fill: #1a1a1a; }
+    .etq-b { font-size: 13px; font-weight: bold; }
+  </style>
+
+  <rect x="0" y="0" width="1340" height="680" fill="#ffffff"/>
+  <text x="670" y="42" text-anchor="middle" class="titulo">Arquitectura cliente-servidor de la Biblioteca</text>
+
+  <!-- ================= CLIENTE ================= -->
+  <rect x="30" y="80" width="340" height="440" rx="12" fill="#eef5ff" stroke="#1f5fa8" stroke-width="2"/>
+  <text x="200" y="108" text-anchor="middle" class="zona">CLIENTE — Navegador</text>
+  <text x="200" y="130" text-anchor="middle" class="puerto">http://localhost:5500</text>
+
+  <rect x="55" y="150" width="290" height="56" rx="8" fill="#ffffff" stroke="#1f5fa8"/>
+  <text x="200" y="173" text-anchor="middle" class="caja-t">index.html</text>
+  <text x="200" y="193" text-anchor="middle" class="caja-s">formulario + tabla de libros (DOM)</text>
+
+  <line x1="200" y1="206" x2="200" y2="238" stroke="#333333" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <text x="208" y="226" class="nota">carga el módulo</text>
+
+  <rect x="55" y="240" width="290" height="56" rx="8" fill="#ffffff" stroke="#1f5fa8"/>
+  <text x="200" y="263" text-anchor="middle" class="caja-t">js/main.js</text>
+  <text x="200" y="283" text-anchor="middle" class="caja-s">eventos: submit, editar, eliminar</text>
+
+  <line x1="150" y1="296" x2="124" y2="334" stroke="#333333" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <line x1="250" y1="296" x2="276" y2="334" stroke="#333333" stroke-width="1.5" marker-end="url(#flecha)"/>
+
+  <rect x="55" y="336" width="138" height="70" rx="8" fill="#ffffff" stroke="#1f5fa8"/>
+  <text x="124" y="359" text-anchor="middle" class="caja-t">js/ui.js</text>
+  <text x="124" y="378" text-anchor="middle" class="caja-s">dibuja la tabla,</text>
+  <text x="124" y="394" text-anchor="middle" class="caja-s">errores y mensajes</text>
+
+  <rect x="207" y="336" width="138" height="70" rx="8" fill="#fff8e1" stroke="#c77700" stroke-width="2"/>
+  <text x="276" y="359" text-anchor="middle" class="caja-t">js/api.js</text>
+  <text x="276" y="378" text-anchor="middle" class="caja-s">único lugar con</text>
+  <text x="276" y="394" text-anchor="middle" class="caja-s">fetch() a la API</text>
+
+  <rect x="55" y="430" width="290" height="44" rx="8" fill="#ffffff" stroke="#1f5fa8" stroke-dasharray="4 3"/>
+  <text x="200" y="457" text-anchor="middle" class="caja-s">css/styles.css (estilos)</text>
+
+  <text x="200" y="503" text-anchor="middle" class="nota">JavaScript Vanilla, sin frameworks</text>
+
+  <!-- servidor de estáticos -->
+  <rect x="30" y="565" width="340" height="70" rx="10" fill="#f3f3f3" stroke="#666666"/>
+  <text x="200" y="592" text-anchor="middle" class="caja-t">python -m http.server 5500</text>
+  <text x="200" y="614" text-anchor="middle" class="caja-s">sirve los archivos estáticos de frontend/</text>
+  <line x1="200" y1="565" x2="200" y2="524" stroke="#333333" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <text x="210" y="550" class="nota">HTML, CSS y JS</text>
+
+  <!-- ================= RED: HTTP / JSON ================= -->
+  <!-- request -->
+  <path d="M345,352 L400,352 L400,188 L658,188" fill="none" stroke="#1f5fa8" stroke-width="2.5" marker-end="url(#flechaAzul)"/>
+  <text x="535" y="160" text-anchor="middle" class="etq-b" fill="#1f5fa8">Request HTTP (fetch)</text>
+  <text x="535" y="178" text-anchor="middle" class="etq">GET · POST · PUT · DELETE /libros</text>
+  <text x="535" y="206" text-anchor="middle" class="etq">body JSON (en POST y PUT)</text>
+
+  <!-- response -->
+  <path d="M660,284 L420,284 L420,390 L347,390" fill="none" stroke="#2e7d32" stroke-width="2.5" marker-end="url(#flechaVerde)"/>
+  <text x="545" y="256" text-anchor="middle" class="etq-b" fill="#2e7d32">Response HTTP</text>
+  <text x="545" y="274" text-anchor="middle" class="etq">código de estado + JSON</text>
+  <text x="545" y="304" text-anchor="middle" class="etq">200 · 201 · 204 · 404 · 422</text>
+
+  <g transform="translate(72,0)">
+  <!-- ================= SERVIDOR ================= -->
+  <rect x="588" y="80" width="400" height="555" rx="12" fill="#f1f8f1" stroke="#2e7d32" stroke-width="2"/>
+  <text x="788" y="108" text-anchor="middle" class="zona">SERVIDOR — FastAPI + uvicorn</text>
+  <text x="788" y="130" text-anchor="middle" class="puerto">http://localhost:8000</text>
+
+  <rect x="613" y="155" width="350" height="66" rx="8" fill="#ffffff" stroke="#2e7d32"/>
+  <text x="788" y="180" text-anchor="middle" class="caja-t">1. CORSMiddleware (main.py)</text>
+  <text x="788" y="200" text-anchor="middle" class="caja-s">responde preflight OPTIONS y agrega</text>
+  <text x="788" y="214" text-anchor="middle" class="caja-s">los headers Access-Control-Allow-*</text>
+
+  <line x1="788" y1="221" x2="788" y2="249" stroke="#333333" stroke-width="1.5" marker-end="url(#flecha)"/>
+
+  <rect x="613" y="251" width="350" height="66" rx="8" fill="#ffffff" stroke="#2e7d32"/>
+  <text x="788" y="276" text-anchor="middle" class="caja-t">2. Endpoints (main.py)</text>
+  <text x="788" y="296" text-anchor="middle" class="caja-s">listar_libros, crear_libro, actualizar_libro...</text>
+  <text x="788" y="310" text-anchor="middle" class="caja-s">Pydantic valida el body (models.py) → 422</text>
+
+  <line x1="788" y1="317" x2="788" y2="345" stroke="#333333" stroke-width="1.5" marker-end="url(#flecha)"/>
+
+  <rect x="613" y="347" width="350" height="66" rx="8" fill="#ffffff" stroke="#2e7d32"/>
+  <text x="788" y="372" text-anchor="middle" class="caja-t">3. Depends(get_db) → get_manager</text>
+  <text x="788" y="392" text-anchor="middle" class="caja-s">database.py: abre UNA conexión por request</text>
+  <text x="788" y="406" text-anchor="middle" class="caja-s">y la cierra al terminar (yield)</text>
+
+  <line x1="788" y1="413" x2="788" y2="441" stroke="#333333" stroke-width="1.5" marker-end="url(#flecha)"/>
+
+  <rect x="613" y="443" width="350" height="66" rx="8" fill="#ffffff" stroke="#2e7d32"/>
+  <text x="788" y="468" text-anchor="middle" class="caja-t">4. LibroManager (managers.py)</text>
+  <text x="788" y="488" text-anchor="middle" class="caja-s">get_all · get_by_id · create · update · delete</text>
+  <text x="788" y="502" text-anchor="middle" class="caja-s">todo el SQL vive acá</text>
+
+  <line x1="788" y1="509" x2="788" y2="537" stroke="#333333" stroke-width="1.5" marker-end="url(#flecha)"/>
+
+  <rect x="613" y="539" width="350" height="66" rx="8" fill="#ffffff" stroke="#2e7d32"/>
+  <text x="788" y="564" text-anchor="middle" class="caja-t">5. sqlite3 (librería estándar)</text>
+  <text x="788" y="584" text-anchor="middle" class="caja-s">execute("... WHERE id = ?") + commit()</text>
+  <text x="788" y="598" text-anchor="middle" class="caja-s">parámetros con ? (sin SQL injection)</text>
+
+  <!-- ================= BASE DE DATOS ================= -->
+  <line x1="963" y1="562" x2="1046" y2="562" stroke="#333333" stroke-width="2" marker-start="url(#flecha)" marker-end="url(#flecha)"/>
+  <text x="1005" y="552" text-anchor="middle" class="etq">SQL</text>
+  <text x="1005" y="580" text-anchor="middle" class="etq">filas</text>
+
+  <path d="M1050,520 L1050,610 A90,16 0 0 0 1230,610 L1230,520" fill="#fff3e0" stroke="#8d5a00" stroke-width="2"/>
+  <ellipse cx="1140" cy="520" rx="90" ry="16" fill="#ffe0b2" stroke="#8d5a00" stroke-width="2"/>
+  <text x="1140" y="560" text-anchor="middle" class="caja-t">biblioteca.db</text>
+  <text x="1140" y="580" text-anchor="middle" class="caja-s">tabla libros</text>
+  <text x="1140" y="598" text-anchor="middle" class="caja-s">(archivo en backend/)</text>
+
+  <!-- nota -->
+  <rect x="1010" y="155" width="240" height="190" rx="10" fill="#fafafa" stroke="#999999" stroke-dasharray="5 4"/>
+  <text x="1025" y="180" class="caja-t">Para tener en cuenta</text>
+  <text x="1025" y="204" class="nota">• Son dos procesos y dos puertos</text>
+  <text x="1025" y="221" class="nota">  distintos → orígenes distintos</text>
+  <text x="1025" y="238" class="nota">  (por eso hace falta CORS).</text>
+  <text x="1025" y="262" class="nota">• El servidor es stateless: entre</text>
+  <text x="1025" y="279" class="nota">  requests no recuerda nada; el</text>
+  <text x="1025" y="296" class="nota">  estado vive en biblioteca.db.</text>
+  <text x="1025" y="320" class="nota">• Documentación automática:</text>
+  <text x="1025" y="337" class="nota">  :8000/docs y :8000/redoc</text>
+  </g>
+</svg>

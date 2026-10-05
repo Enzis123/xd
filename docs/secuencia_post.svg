@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="1440" viewBox="0 0 1560 1440" font-family="Arial, Helvetica, sans-serif">
+<title>Secuencia: clic en Guardar (POST /libros)</title>
+<defs>
+<marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker>
+<marker id="fa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,1 L10,5 L0,9" fill="none" stroke="#222" stroke-width="1.5"/></marker>
+</defs>
+<style>
+.h{font-size:14px;font-weight:bold;fill:#1a1a1a}
+.hs{font-size:12px;fill:#444}
+.m{font-size:12.5px;fill:#111;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round}
+.mb{font-size:12.5px;font-weight:bold;fill:#111;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round}
+.fr{font-size:13px;font-weight:bold;fill:#333}
+.t{font-size:22px;font-weight:bold;fill:#1a1a1a}
+.n{font-size:12px;fill:#555}
+</style>
+<rect width="1560" height="1440" fill="#fff"/>
+<text x="780.0" y="34" text-anchor="middle" class="t">Diagrama de secuencia: clic en «Guardar» (alta de un libro, POST /libros)</text>
+<rect x="356" y="388" width="446" height="132" fill="#f7f3fd" stroke="#5e35b1" stroke-width="1.5" rx="4"/>
+<path d="M356,410 L587.0,410 L597.0,400 L597.0,388" fill="#fff" stroke="#5e35b1" stroke-width="1.5"/>
+<text x="364" y="404" class="fr" fill="#5e35b1">preflight (otro origen + JSON)</text>
+<rect x="191" y="640" width="1265" height="702" fill="#fffafa" stroke="#b3261e" stroke-width="1.5" rx="4"/>
+<path d="M191,662 L224.9,662 L234.9,652 L234.9,640" fill="#fff" stroke="#b3261e" stroke-width="1.5"/>
+<text x="199" y="656" class="fr" fill="#b3261e">alt</text>
+<text x="233" y="673" class="mb" fill="#b3261e">[body inválido]</text>
+<line x1="191" y1="785" x2="1456" y2="785" stroke="#b3261e" stroke-dasharray="8 5" stroke-width="1.5"/>
+<text x="233" y="806" class="mb">[body válido]</text>
+<line x1="90" y1="110" x2="90" y2="1360" stroke="#999" stroke-dasharray="5 4"/>
+<rect x="22" y="60" width="136" height="50" rx="6" fill="#f5f5f5" stroke="#666" stroke-width="1.5"/>
+<text x="90" y="82" text-anchor="middle" class="h">Usuario</text>
+<text x="90" y="100" text-anchor="middle" class="hs"></text>
+<rect x="22" y="1360" width="136" height="30" rx="6" fill="#f5f5f5" stroke="#666" stroke-width="1.5"/>
+<text x="90" y="1380" text-anchor="middle" class="h">Usuario</text>
+<line x1="253" y1="110" x2="253" y2="1360" stroke="#999" stroke-dasharray="5 4"/>
+<rect x="185" y="60" width="136" height="50" rx="6" fill="#eef5ff" stroke="#1f5fa8" stroke-width="1.5"/>
+<text x="253" y="82" text-anchor="middle" class="h">main.js / ui.js</text>
+<text x="253" y="100" text-anchor="middle" class="hs">(frontend)</text>
+<rect x="185" y="1360" width="136" height="30" rx="6" fill="#eef5ff" stroke="#1f5fa8" stroke-width="1.5"/>
+<text x="253" y="1380" text-anchor="middle" class="h">main.js / ui.js</text>
+<line x1="416" y1="110" x2="416" y2="1360" stroke="#999" stroke-dasharray="5 4"/>
+<rect x="348" y="60" width="136" height="50" rx="6" fill="#fff8e1" stroke="#c77700" stroke-width="1.5"/>
+<text x="416" y="82" text-anchor="middle" class="h">api.js</text>
+<text x="416" y="100" text-anchor="middle" class="hs">fetch()</text>
+<rect x="348" y="1360" width="136" height="30" rx="6" fill="#fff8e1" stroke="#c77700" stroke-width="1.5"/>
+<text x="416" y="1380" text-anchor="middle" class="h">api.js</text>
+<line x1="579" y1="110" x2="579" y2="1360" stroke="#999" stroke-dasharray="5 4"/>
+<rect x="511" y="60" width="136" height="50" rx="6" fill="#ede7f6" stroke="#5e35b1" stroke-width="1.5"/>
+<text x="579" y="82" text-anchor="middle" class="h">Navegador</text>
+<text x="579" y="100" text-anchor="middle" class="hs">(motor de red)</text>
+<rect x="511" y="1360" width="136" height="30" rx="6" fill="#ede7f6" stroke="#5e35b1" stroke-width="1.5"/>
+<text x="579" y="1380" text-anchor="middle" class="h">Navegador</text>
+<line x1="742" y1="110" x2="742" y2="1360" stroke="#999" stroke-dasharray="5 4"/>
+<rect x="674" y="60" width="136" height="50" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+<text x="742" y="82" text-anchor="middle" class="h">CORSMiddleware</text>
+<text x="742" y="100" text-anchor="middle" class="hs">(main.py)</text>
+<rect x="674" y="1360" width="136" height="30" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+<text x="742" y="1380" text-anchor="middle" class="h">CORSMiddleware</text>
+<line x1="905" y1="110" x2="905" y2="1360" stroke="#999" stroke-dasharray="5 4"/>
+<rect x="837" y="60" width="136" height="50" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+<text x="905" y="82" text-anchor="middle" class="h">FastAPI + Pydantic</text>
+<text x="905" y="100" text-anchor="middle" class="hs">endpoint crear_libro</text>
+<rect x="837" y="1360" width="136" height="30" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+<text x="905" y="1380" text-anchor="middle" class="h">FastAPI + Pydantic</text>
+<line x1="1068" y1="110" x2="1068" y2="1360" stroke="#999" stroke-dasharray="5 4"/>
+<rect x="1000" y="60" width="136" height="50" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+<text x="1068" y="82" text-anchor="middle" class="h">get_db /</text>
+<text x="1068" y="100" text-anchor="middle" class="hs">get_manager</text>
+<rect x="1000" y="1360" width="136" height="30" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+<text x="1068" y="1380" text-anchor="middle" class="h">get_db</text>
+<line x1="1231" y1="110" x2="1231" y2="1360" stroke="#999" stroke-dasharray="5 4"/>
+<rect x="1163" y="60" width="136" height="50" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+<text x="1231" y="82" text-anchor="middle" class="h">LibroManager</text>
+<text x="1231" y="100" text-anchor="middle" class="hs">(managers.py)</text>
+<rect x="1163" y="1360" width="136" height="30" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+<text x="1231" y="1380" text-anchor="middle" class="h">LibroManager</text>
+<line x1="1394" y1="110" x2="1394" y2="1360" stroke="#999" stroke-dasharray="5 4"/>
+<rect x="1326" y="60" width="136" height="50" rx="6" fill="#fff3e0" stroke="#8d5a00" stroke-width="1.5"/>
+<text x="1394" y="82" text-anchor="middle" class="h">SQLite</text>
+<text x="1394" y="100" text-anchor="middle" class="hs">biblioteca.db</text>
+<rect x="1326" y="1360" width="136" height="30" rx="6" fill="#fff3e0" stroke="#8d5a00" stroke-width="1.5"/>
+<text x="1394" y="1380" text-anchor="middle" class="h">SQLite</text>
+<line x1="90" y1="150" x2="251" y2="150" stroke="#222" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="100" y="143" class="m" fill="#222">1. clic en «Guardar» (submit del form)</text>
+<path d="M253,177 L281,177 L281,193 L255,193" fill="none" stroke="#222" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="289" y="184" class="m">2. guardarLibro(evento): preventDefault()</text>
+<path d="M253,217 L281,217 L281,233 L255,233" fill="none" stroke="#222" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="289" y="224" class="m">3. ui.leerFormulario() → objeto JS {titulo, autor, genero, ...}</text>
+<line x1="253" y1="275" x2="414" y2="275" stroke="#222" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="263" y="268" class="m" fill="#222">4. crearLibro(datos)</text>
+<path d="M416,304 L444,304 L444,320 L418,320" fill="none" stroke="#222" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="452" y="311" class="m">5. JSON.stringify(datos) + header Content-Type: application/json</text>
+<line x1="416" y1="360" x2="577" y2="360" stroke="#222" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="426" y="353" class="m" fill="#222">6. fetch('http://localhost:8000/libros', {method: 'POST'})</text>
+<line x1="579" y1="438" x2="740" y2="438" stroke="#222" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="589" y="431" class="m" fill="#222">7. OPTIONS /libros   Origin: http://localhost:5500</text>
+<text x="589" y="454" class="m">Access-Control-Request-Method: POST / -Headers: content-type</text>
+<line x1="742" y1="495" x2="581" y2="495" stroke="#222" stroke-width="1.6" stroke-dasharray="7 4" marker-end="url(#fa)"/>
+<text x="589" y="488" class="m" fill="#222">8. 200 OK  Access-Control-Allow-Origin: *  (+ Allow-Methods)</text>
+<line x1="579" y1="555" x2="740" y2="555" stroke="#1f5fa8" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="589" y="548" class="mb" fill="#1f5fa8">9. POST /libros  Content-Type: application/json  body {"titulo": ...}</text>
+<line x1="742" y1="590" x2="903" y2="590" stroke="#222" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="752" y="583" class="m" fill="#222">10. pasa la request al router</text>
+<path d="M905,614 L933,614 L933,630 L907,630" fill="none" stroke="#222" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="941" y="621" class="m">11. Pydantic: JSON → LibroCreate (tipos, largos, rangos, género)</text>
+<line x1="905" y1="705" x2="418" y2="705" stroke="#b3261e" stroke-width="1.6" stroke-dasharray="7 4" marker-end="url(#fa)"/>
+<text x="426" y="698" class="m" fill="#b3261e">12a. 422 Unprocessable Entity  {"detail": [{"loc": ["body","paginas"], "msg": ..., "type": ...}]}</text>
+<line x1="416" y1="738" x2="255" y2="738" stroke="#b3261e" stroke-width="1.6" stroke-dasharray="7 4" marker-end="url(#fa)"/>
+<text x="263" y="731" class="m" fill="#b3261e">13a. throw ApiError(422, detail)</text>
+<path d="M253,757 L281,757 L281,773 L255,773" fill="none" stroke="#222" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="289" y="764" class="m">14a. ui.mostrarErroresCampos(detail): marca los inputs en rojo (no se toca la BD)</text>
+<line x1="905" y1="840" x2="1066" y2="840" stroke="#222" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="915" y="833" class="m" fill="#222">12. Depends(get_manager) → get_db()</text>
+<line x1="1068" y1="875" x2="1392" y2="875" stroke="#222" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="1078" y="868" class="m" fill="#222">13. sqlite3.connect(biblioteca.db)</text>
+<line x1="1068" y1="910" x2="1229" y2="910" stroke="#222" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="1078" y="903" class="m" fill="#222">14. LibroManager(conn)</text>
+<line x1="905" y1="950" x2="1229" y2="950" stroke="#222" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="915" y="943" class="m" fill="#222">15. manager.create(datos)</text>
+<line x1="1231" y1="985" x2="1392" y2="985" stroke="#222" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="1241" y="978" class="m" fill="#222">16. INSERT INTO libros (...) VALUES (?, ?, ...)</text>
+<line x1="1231" y1="1020" x2="1392" y2="1020" stroke="#222" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="1241" y="1013" class="mb" fill="#222">17. commit()</text>
+<line x1="1394" y1="1050" x2="1233" y2="1050" stroke="#222" stroke-width="1.6" stroke-dasharray="7 4" marker-end="url(#fa)"/>
+<text x="1241" y="1043" class="m" fill="#222">18. cursor.lastrowid</text>
+<line x1="1231" y1="1085" x2="1392" y2="1085" stroke="#222" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="1241" y="1078" class="m" fill="#222">19. get_by_id(id) → SELECT ... WHERE id = ?</text>
+<line x1="1231" y1="1118" x2="907" y2="1118" stroke="#222" stroke-width="1.6" stroke-dasharray="7 4" marker-end="url(#fa)"/>
+<text x="915" y="1111" class="m" fill="#222">20. Libro (con id)</text>
+<line x1="1068" y1="1150" x2="1392" y2="1150" stroke="#222" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="1078" y="1143" class="m" fill="#222">21. fin del request: conn.close() (finally)</text>
+<line x1="905" y1="1190" x2="418" y2="1190" stroke="#2e7d32" stroke-width="1.6" stroke-dasharray="7 4" marker-end="url(#fa)"/>
+<text x="426" y="1183" class="mb" fill="#2e7d32">22. 201 Created  + JSON del libro creado  (+ Access-Control-Allow-Origin)</text>
+<line x1="416" y1="1225" x2="255" y2="1225" stroke="#222" stroke-width="1.6" stroke-dasharray="7 4" marker-end="url(#fa)"/>
+<text x="263" y="1218" class="m" fill="#222">23. objeto libro (respuesta parseada)</text>
+<path d="M253,1247 L281,1247 L281,1263 L255,1263" fill="none" stroke="#222" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="289" y="1254" class="m">24. ui.mostrarMensaje("creado correctamente"), ui.resetearFormulario()</text>
+<line x1="253" y1="1295" x2="414" y2="1295" stroke="#222" stroke-width="1.6" marker-end="url(#f)"/>
+<text x="263" y="1288" class="m" fill="#222">25. cargarLibros() → listarLibros()  GET /libros → 200 [lista]</text>
+<line x1="253" y1="1325" x2="92" y2="1325" stroke="#2e7d32" stroke-width="1.6" stroke-dasharray="7 4" marker-end="url(#fa)"/>
+<text x="100" y="1318" class="m" fill="#2e7d32">26. ui.renderizarLibros(): la tabla muestra el libro nuevo</text>
+<text x="193" y="1428" class="n">Nota: el preflight (7-8) lo hace el navegador solo; nuestro JS no lo escribe. Si el endpoint lanza HTTPException o hay error, la respuesta igual pasa por CORSMiddleware.</text>
+</svg>
