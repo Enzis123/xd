@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- main.js es un ES module: importa api.js y ui.js. Los módulos se ejecutan diferidos (después de parsear el HTML). -->
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <header class="encabezado">
+    <div class="contenedor">
+      <h1>📚 Biblioteca</h1>
+      <p class="subtitulo">Gestión de libros: alta, edición, listado y baja.</p>
+    </div>
+  </header>
+
+  <main class="contenedor principal">
+    <!-- Área de mensajes / alertas (aria-live para lectores de pantalla) -->
+    <div id="mensajes" class="mensajes" role="status" aria-live="polite"></div>
+
+    <section class="tarjeta" aria-labelledby="titulo-form">
+      <h2 id="titulo-form">Nuevo libro</h2>
+
+      <!--
+        `novalidate` desactiva la validación nativa del navegador a propósito:
+        la validación real la hace el backend (Pydantic/FastAPI) y queremos poder
+        demostrar cómo el frontend muestra los errores 422 campo por campo.
+        Los atributos required/min/max/maxlength quedan como documentación y
+        como pista de accesibilidad, pero no bloquean el envío.
+      -->
+      <form id="form-libro" novalidate>
+        <input type="hidden" id="libro-id" name="id">
+
+        <div class="campos">
+          <div class="campo campo--ancho">
+            <label for="titulo">Título *</label>
+            <input type="text" id="titulo" name="titulo" maxlength="200" required autocomplete="off">
+            <p class="error-campo" data-error-for="titulo"></p>
+          </div>
+
+          <div class="campo campo--ancho">
+            <label for="autor">Autor *</label>
+            <input type="text" id="autor" name="autor" maxlength="120" required autocomplete="off">
+            <p class="error-campo" data-error-for="autor"></p>
+          </div>
+
+          <div class="campo">
+            <label for="genero">Género *</label>
+            <select id="genero" name="genero" required>
+              <option value="">— Seleccioná un género —</option>
+              <option>Novela</option>
+              <option>Cuento</option>
+              <option>Poesía</option>
+              <option>Ensayo</option>
+              <option>Ciencia ficción</option>
+              <option>Fantasía</option>
+              <option>Historia</option>
+              <option>Biografía</option>
+              <option>Infantil</option>
+              <option>Otro</option>
+            </select>
+            <p class="error-campo" data-error-for="genero"></p>
+          </div>
+
+          <div class="campo">
+            <label for="anio_publicacion">Año de publicación</label>
+            <input type="number" id="anio_publicacion" name="anio_publicacion" min="1000" step="1" placeholder="Opcional">
+            <p class="error-campo" data-error-for="anio_publicacion"></p>
+          </div>
+
+          <div class="campo">
+            <label for="paginas">Páginas *</label>
+            <input type="number" id="paginas" name="paginas" min="1" max="10000" step="1" required>
+            <p class="error-campo" data-error-for="paginas"></p>
+          </div>
+
+          <div class="campo">
+            <label for="precio">Precio *</label>
+            <input type="number" id="precio" name="precio" min="0" step="0.01" required>
+            <p class="error-campo" data-error-for="precio"></p>
+          </div>
+
+          <div class="campo campo--check">
+            <label class="check">
+              <input type="checkbox" id="disponible" name="disponible" checked>
+              <span>Disponible</span>
+            </label>
+            <p class="error-campo" data-error-for="disponible"></p>
+          </div>
+        </div>
+
+        <div class="acciones-form">
+          <button type="submit" id="btn-guardar" class="btn btn--primario">Crear libro</button>
+          <button type="button" id="btn-cancelar" class="btn btn--secundario" hidden>Cancelar edición</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="tarjeta" aria-labelledby="titulo-listado">
+      <div class="cabecera-listado">
+        <h2 id="titulo-listado">Libros</h2>
+        <button type="button" id="btn-recargar" class="btn btn--secundario">↻ Recargar</button>
+      </div>
+
+      <!-- Indicador de carga -->
+      <div id="cargando" class="cargando" hidden>
+        <span class="spinner" aria-hidden="true"></span>
+        <span>Cargando…</span>
+      </div>
+
+      <p id="vacio" class="vacio" hidden>No hay libros cargados todavía.</p>
+
+      <div class="tabla-scroll">
+        <table id="tabla-libros" class="tabla">
+          <thead>
+            <tr>
+              <th scope="col">Título</th>
+              <th scope="col">Autor</th>
+              <th scope="col">Género</th>
+              <th scope="col">Año</th>
+              <th scope="col">Páginas</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Estado</th>
+              <th scope="col"><span class="sr-only">Acciones</span></th>
+            </tr>
+          </thead>
+          <tbody id="lista-libros"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">TP — Frontend en JavaScript Vanilla</div>
+  </footer>
+</body>
+</html>
