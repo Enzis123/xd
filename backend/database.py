@@ -19,7 +19,7 @@ def init_db():
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             titulo TEXT NOT NULL,
             autor TEXT NOT NULL,
-            anio INTEGER,
+            año INTEGER,
             precio REAL NOT NULL,
             disponible INTEGER NOT NULL DEFAULT 1
         )

@@ -16,8 +16,8 @@ class LibroManager:
 
     def create(self, data: LibroCreate) -> Libro:
         cur = self.conn.execute(
-            "INSERT INTO libros (titulo, autor, anio, precio, disponible) VALUES (?, ?, ?, ?, ?)",
-            (data.titulo, data.autor, data.anio, data.precio, data.disponible),
+            "INSERT INTO libros (titulo, autor, año, precio, disponible) VALUES (?, ?, ?, ?, ?)",
+            (data.titulo, data.autor, data.año, data.precio, data.disponible),
         )
         self.conn.commit()
         return self.get_by_id(cur.lastrowid)
@@ -28,8 +28,8 @@ class LibroManager:
             return None
         nuevo = actual.model_copy(update=data.model_dump(exclude_unset=True))
         self.conn.execute(
-            "UPDATE libros SET titulo = ?, autor = ?, anio = ?, precio = ?, disponible = ? WHERE id = ?",
-            (nuevo.titulo, nuevo.autor, nuevo.anio, nuevo.precio, nuevo.disponible, id),
+            "UPDATE libros SET titulo = ?, autor = ?, año = ?, precio = ?, disponible = ? WHERE id = ?",
+            (nuevo.titulo, nuevo.autor, nuevo.año, nuevo.precio, nuevo.disponible, id),
         )
         self.conn.commit()
         return nuevo

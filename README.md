@@ -4,7 +4,7 @@
 
 ## Tema
 
-Una app para cargar libros. Cada libro tiene: `id`, `titulo`, `autor`, `anio`, `precio` y `disponible`.
+Una app para cargar libros. Cada libro tiene: `id`, `titulo`, `autor`, `año`, `precio` y `disponible`.
 
 ## Tecnologías
 
@@ -42,10 +42,10 @@ Ejemplo de POST:
 
 ```
 POST /libros
-{"titulo": "Ficciones", "autor": "Jorge Luis Borges", "anio": 1944, "precio": 12500}
+{"titulo": "Ficciones", "autor": "Jorge Luis Borges", "año": 1944, "precio": 12500}
 
 → 201
-{"titulo": "Ficciones", "autor": "Jorge Luis Borges", "anio": 1944, "precio": 12500.0, "disponible": true, "id": 1}
+{"titulo": "Ficciones", "autor": "Jorge Luis Borges", "año": 1944, "precio": 12500.0, "disponible": true, "id": 1}
 ```
 
 Ejemplo de GET de un id que no existe:

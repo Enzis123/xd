@@ -1,12 +1,12 @@
 // Manipulación del DOM.
-const campos = ["titulo", "autor", "anio", "precio"];
+const campos = ["titulo", "autor", "año", "precio"];
 
 function mostrarLibros(libros) {
   const lista = document.getElementById("lista");
   lista.innerHTML = "";
   for (const libro of libros) {
     const fila = document.createElement("tr");
-    for (const valor of [libro.titulo, libro.autor, libro.anio ?? "-", "$" + libro.precio, libro.disponible ? "Sí" : "No"]) {
+    for (const valor of [libro.titulo, libro.autor, libro.año ?? "-", "$" + libro.precio, libro.disponible ? "Sí" : "No"]) {
       const celda = document.createElement("td");
       celda.textContent = valor;
       fila.appendChild(celda);
@@ -29,11 +29,11 @@ function mostrarCargando(activo) {
 }
 
 function leerFormulario() {
-  const anio = document.getElementById("anio").value;
+  const año = document.getElementById("año").value;
   return {
     titulo: document.getElementById("titulo").value,
     autor: document.getElementById("autor").value,
-    anio: anio === "" ? null : Number(anio),
+    año: año === "" ? null : Number(año),
     precio: Number(document.getElementById("precio").value),
     disponible: document.getElementById("disponible").checked,
   };
