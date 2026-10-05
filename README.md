@@ -1,6 +1,6 @@
 # Biblioteca — TP Full Stack
 
-**Alumno:** Nombre Apellido — **Curso:** _completar_
+**Alumno:** Francesco Giacosa — **Curso:** 6to 5ta — **Materia:** Programación
 
 ## Tema
 
